@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    width: 600px;
+    height: 400px;
+    
+}
+.img_container{
+    position: relative;
+    margin-top: 5%;
+
+    width: 600px;
+    height: 400px;
+}
+.img_container::before{
+    content: '';
+    display: block;
+    background-image: url('image 13.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 750px;
+    height: 500px;
+    position: absolute;
+    top: -50px;
+    left: -75px;
+    mask-image: url('mask.png');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.img_container:hover::before{
+    cursor: pointer;
+    mask-position: 75%;
+}
